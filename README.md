@@ -111,3 +111,7 @@ kubectl label pvc vcppvc silver=yes
 
 
 </pre>
+
+
+CNS UI:
+[CNS UI](https://github.com/chethanv28/CSI-migration-syncer-logs/blob/master/Screen%20Shot%202020-06-23%20at%208.35.57%20AM.png)
