@@ -274,4 +274,4 @@ root@kube-master:~# kubectl logs vsphere-csi-controller-7cc4b4689d-rl2gk -c vsph
 </pre>
   
 CNS UI after full sync: [CNS UI](https://github.com/chethanv28/CSI-migration-syncer-logs/blob/master/Full-sync-large.png)
-*Note: 6 volumes existed before this test. So ignore the extra volumes on the UI
+*Note: 6 volumes existed before this test. So ignore the extra volumes on the UI. They were present before the beginning of this test
