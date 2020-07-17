@@ -7369,3 +7369,14 @@ root@kube-master:~# kubectl get cnsvspherevolumemigrations.cns.vmware.com -A | g
 </pre>
 
 * Observed that full sync is not terminated based on time interval(30 minutes). Full sync continues with processing the data in the first cycle
+root@kube-master:~# kubectl logs vsphere-csi-controller-7cc4b4689d-rl2gk -c vsphere-syncer -n kube-system | grep "triggered"
+2020-07-17T05:54:49.011Z	INFO	syncer/metadatasyncer.go:269	fullSync is triggered	{"TraceId": "502f2638-77a6-4644-b5f6-793a13c4a084"}
+2020-07-17T08:49:45.858Z	INFO	syncer/metadatasyncer.go:269	fullSync is triggered	{"TraceId": "fb94b202-888d-41d0-867e-8875cb0c227f"}
+root@kube-master:~# 
+
+* 1 full sync cycle took 2hrs 55 minutes
+  Time spent registering 500 volumes = 2 hours (15 seconds for each volume)
+  Time spent for volume metadata update = 50 minutes (6 seconds per volume)
+  
+CNS UI after full sync: [CNS UI](https://github.com/chethanv28/CSI-migration-syncer-logs/blob/master/Full-sync-large.png)
+*Note: 6 volumes existed before this test. So ignore the extra volumes on the UI
