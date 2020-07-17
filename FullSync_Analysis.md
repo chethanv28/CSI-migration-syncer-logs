@@ -7367,3 +7367,5 @@ root@kube-master:~/csi-yamls# kubectl describe pvc -A | grep "pv.kubernetes.io/m
 root@kube-master:~# kubectl get cnsvspherevolumemigrations.cns.vmware.com -A | grep - | wc -l
 128
 </pre>
+
+* Observed that full sync is not terminated based on time interval(30 minutes). Full sync continues with processing the data in the first cycle
